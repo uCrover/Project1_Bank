@@ -11,10 +11,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class PersonaEntity {
 
     @Id
-    private String _id;
+    private String id;
     private String nombre;
     private String apellido;
-    private int edad;
+    //añadimo estos 2 atributos
+    private String nro_documento;
+    private String tipo_cliente;
+    //private int edad;
 
 
 }

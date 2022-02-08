@@ -25,6 +25,11 @@ public class ControllerPersona {
         return service.save(persona);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        service.deleteProduct(id);
+    }
+
     @GetMapping(
             value = "/ok",
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE

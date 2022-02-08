@@ -8,4 +8,7 @@ public interface ServicePersona {
     Flux<PersonaEntity> findAll();
 
     Mono<PersonaEntity> save(PersonaEntity persona);
+
+    void deleteProduct(Integer id);
+
 }

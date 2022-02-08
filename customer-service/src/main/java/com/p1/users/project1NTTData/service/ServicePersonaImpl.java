@@ -22,4 +22,11 @@ public class ServicePersonaImpl implements ServicePersona {
     public Mono<PersonaEntity> save(PersonaEntity persona) {
         return repository.save(persona);
     }
+
+    @Override
+    public void deleteProduct(Integer id) {
+        repository.deleteById(id);
+    }
+
+
 }

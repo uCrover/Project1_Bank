@@ -14,10 +14,9 @@ public class PersonaEntity {
     private String id;
     private String nombre;
     private String apellido;
-    //añadimo estos 2 atributos
     private String nro_documento;
     private String tipo_cliente;
-    //private int edad;
+
 
 
 }

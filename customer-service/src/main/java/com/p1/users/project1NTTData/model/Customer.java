@@ -7,16 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Setter
 @Getter
-@Document(collection="Personas")
-public class PersonaEntity {
+@Document(collection="customer")
+public class Customer {
 
     @Id
-    private String id;
+    private String _id;
     private String nombre;
     private String apellido;
     private String nro_documento;
-    private String tipo_cliente;
-
+    private int edad;
 
 
 }

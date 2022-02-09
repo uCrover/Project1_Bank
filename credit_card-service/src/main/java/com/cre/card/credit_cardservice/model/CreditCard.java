@@ -12,8 +12,9 @@ public class CreditCard {
 
     @Id
     private String id;
-    private String nro_cuenta;
-    private int saldo;
-    private int limite_consumo;
-    private int cantidad_consumo;
+    private String nroCuenta;
+    private String nroDocumento;
+    private double saldo;
+    private double limiteConsumo;
+    private double cantidadConsumo;
 }

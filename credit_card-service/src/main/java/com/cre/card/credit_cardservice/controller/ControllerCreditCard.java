@@ -20,7 +20,7 @@ public class ControllerCreditCard {
 
     @GetMapping("/{id}")
     public Mono<CreditCard> getCreditCard(@PathVariable("id") String id) {
-        return service.findById(id);
+        return service.findByNroCuenta(id);
     }
 
     @PostMapping
@@ -30,7 +30,7 @@ public class ControllerCreditCard {
 
     @PutMapping
     public Mono<CreditCard> updateCreditCard(@RequestBody CreditCard creditCard){
-        return service.save(creditCard);
+        return service.update(creditCard);
     }
 
     @DeleteMapping("/{id}")

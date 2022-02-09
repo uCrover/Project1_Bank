@@ -6,7 +6,10 @@ import reactor.core.publisher.Mono;
 
 public interface ServiceCreditCard {
     public Flux<CreditCard> findAll();
-    public Mono<CreditCard> findById(String id);
+    public Mono<CreditCard> findByNroCuenta(String id);
     public Mono<CreditCard> save(CreditCard creditCard);
+    public Mono<CreditCard> update(CreditCard creditCard);
     public void delete(String id);
+
+
 }

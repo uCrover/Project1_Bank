@@ -19,12 +19,40 @@ public class ServiceCreditCardImpl implements ServiceCreditCard{
     }
 
     @Override
-    public Mono<CreditCard> findById(String id) {
-        return repository.findById(id);
+    public Mono<CreditCard> findByNroCuenta(String id) {
+        return repository.findByNroCuenta(id);
     }
 
     @Override
     public Mono<CreditCard> save(CreditCard creditCard) {
+
+        Integer digitCode1 = (int) (10000 * Math.random());
+        Integer digitCode2 = (int) (10000 * Math.random());
+        Integer digitCode3 = (int) (10000 * Math.random());
+        Integer digitCode4 = (int) (10000 * Math.random());
+        String nro_cuenta=digitCode1.toString()+"-"+digitCode2.toString()+"-"+digitCode3.toString()+"-"+digitCode4.toString();
+        creditCard.setNroCuenta(nro_cuenta);
+        Integer limite = (int) (10000 * Math.random());
+        creditCard.setLimiteConsumo(limite);
+        creditCard.setCantidadConsumo(0);
+        creditCard.setSaldo(limite);
+
+        return repository.save(creditCard);
+    }
+
+    @Override
+    public Mono<CreditCard> update(CreditCard creditCard) {
+        Integer digitCode1 = (int) (10000 * Math.random());
+        Integer digitCode2 = (int) (10000 * Math.random());
+        Integer digitCode3 = (int) (10000 * Math.random());
+        Integer digitCode4 = (int) (10000 * Math.random());
+        String nro_cuenta=digitCode1.toString()+"-"+digitCode2.toString()+"-"+digitCode3.toString()+"-"+digitCode4.toString();
+        creditCard.setNroCuenta(nro_cuenta);
+        Integer limite = (int) (10000 * Math.random());
+        creditCard.setLimiteConsumo(limite);
+        creditCard.setCantidadConsumo(0);
+        creditCard.setSaldo(limite);
+
         return repository.save(creditCard);
     }
 

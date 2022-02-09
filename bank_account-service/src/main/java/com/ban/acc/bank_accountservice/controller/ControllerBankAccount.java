@@ -1,0 +1,37 @@
+package com.ban.acc.bank_accountservice.controller;
+
+import com.ban.acc.bank_accountservice.model.BankAccount;
+import com.ban.acc.bank_accountservice.service.ServiceBankAccount;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/bank_account")
+public class ControllerBankAccount {
+    private final ServiceBankAccount service;
+
+    @GetMapping
+    public Flux<BankAccount> getBankAccount(){
+        return service.findAll();
+    }
+    @GetMapping("/{id}")
+    public Mono<BankAccount> getBankAccount(@PathVariable ("id") String id){
+        return service.findById(id);
+    }
+    @PostMapping
+    public Mono<BankAccount> saveBankAccount(@RequestBody BankAccount bankAccount){
+        return service.save(bankAccount);
+    }
+    @PutMapping
+    public Mono<BankAccount> updateBankAccount(@RequestBody BankAccount bankAccount){
+        return service.save(bankAccount);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteBankAccount(@PathVariable ("id") String id){
+        service.delete(id);
+    }
+
+}

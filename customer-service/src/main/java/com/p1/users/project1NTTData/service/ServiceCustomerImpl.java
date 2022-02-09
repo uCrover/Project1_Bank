@@ -29,6 +29,11 @@ public class ServiceCustomerImpl implements ServiceCustomer {
     }
 
     @Override
+    public Mono<Customer> update(Customer customer) {
+        return repository.save(customer);
+    }
+
+    @Override
     public void delete(String id) {
         repository.deleteById(id).subscribe();
 

@@ -8,6 +8,7 @@ public interface ServiceCustomer {
     public Flux<Customer> findAll();
     public Mono<Customer> findById(String id);
     public Mono<Customer> save(Customer psc);
+    public Mono<Customer> update(Customer psc);
     public void delete(String id);
 
 }

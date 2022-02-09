@@ -30,7 +30,7 @@ public class ControllerCustomer {
 
     @PutMapping
     public Mono<Customer> updateCustomer(@RequestBody Customer customer){
-        return service.save(customer);
+        return service.update(customer);
     }
 
     @DeleteMapping("/{id}")

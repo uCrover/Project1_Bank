@@ -14,8 +14,8 @@ public class Customer {
     private String _id;
     private String nombre;
     private String apellido;
-    private String nro_documento;
-    private int edad;
+    private String nroDocumento;
+    private String tipoCliente;
 
 
 }

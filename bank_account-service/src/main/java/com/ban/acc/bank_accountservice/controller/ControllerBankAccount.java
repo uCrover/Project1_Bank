@@ -3,6 +3,7 @@ package com.ban.acc.bank_accountservice.controller;
 import com.ban.acc.bank_accountservice.model.BankAccount;
 import com.ban.acc.bank_accountservice.service.ServiceBankAccount;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -14,6 +15,7 @@ public class ControllerBankAccount {
     private final ServiceBankAccount service;
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public Flux<BankAccount> getBankAccount(){
         return service.findAll();
     }
@@ -27,7 +29,7 @@ public class ControllerBankAccount {
     }
     @PutMapping
     public Mono<BankAccount> updateBankAccount(@RequestBody BankAccount bankAccount){
-        return service.save(bankAccount);
+        return service.update(bankAccount);
     }
     @DeleteMapping("/{id}")
     public void deleteBankAccount(@PathVariable ("id") String id){

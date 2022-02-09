@@ -29,6 +29,11 @@ public class ServiceBankAccountImpl implements ServiceBankAccount{
     }
 
     @Override
+    public Mono<BankAccount> update(BankAccount bankAccount) {
+        return repository.save(bankAccount);
+    }
+
+    @Override
     public void delete(String id) {
         repository.deleteById(id).subscribe();
     }

@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface Ipay_cre_ser extends ReactiveMongoRepository<pay_cre_ser,Integer> {
+public interface Ipay_cre_ser extends ReactiveMongoRepository<pay_cre_ser,String> {
 
 }

@@ -5,7 +5,9 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface pay_ser_cre {
-    Flux<pay_cre_ser> findAll();
-    Mono<pay_cre_ser> save(pay_cre_ser pcs);
-    void deletePay_Ser_Cre(Integer id);
+    public Flux<pay_cre_ser> findAll();
+    public Mono<pay_cre_ser> findBy(String id);
+    public Mono<pay_cre_ser> save(pay_cre_ser psc);
+    public Mono<pay_cre_ser> update(pay_cre_ser psc);
+    public void delete(String id);
 }

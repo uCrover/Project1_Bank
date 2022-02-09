@@ -13,20 +13,31 @@ import reactor.core.publisher.Mono;
 public class controller_pay_cre_ser {
     private final pay_ser_cre service;
 
-    @GetMapping("/getPersonas")
-    public Flux<pay_cre_ser> getPersons(){
+    @GetMapping
+    public Flux<pay_cre_ser> getCreditCards() {
         return service.findAll();
     }
 
-    @PostMapping("/postPersonas")
-    public Mono<pay_cre_ser> postPersons(@RequestBody pay_cre_ser persona){
-        return service.save(persona);
+    @GetMapping("/{id}")
+    public Mono<pay_cre_ser> getCreditCard(@PathVariable("id") String id) {
+        return service.findBy(id);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable("id") Integer id){
-        service.deletePay_Ser_Cre(id);
+    @PostMapping
+    public Mono<pay_cre_ser> saveCreditCard(@RequestBody pay_cre_ser psc){
+        return service.save(psc);
     }
+
+    @PutMapping
+    public Mono<pay_cre_ser> updateCreditCard(@RequestBody pay_cre_ser psc){
+        return service.update(psc);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCreditCard(@PathVariable("id") String id) {
+        service.delete(id);
+    }
+
 
 
 }

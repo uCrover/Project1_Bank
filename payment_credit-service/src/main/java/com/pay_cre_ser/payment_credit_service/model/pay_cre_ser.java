@@ -13,8 +13,8 @@ import java.util.Date;
 public class pay_cre_ser {
     @Id
     private String id;
-    private String nro_documento;
+    private String nroDocumento;
     private int cantidad;
-    private Date fecha;
+    private String fecha;
 
 }

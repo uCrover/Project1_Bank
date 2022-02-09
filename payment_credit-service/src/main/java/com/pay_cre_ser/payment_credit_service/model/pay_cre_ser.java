@@ -10,7 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Document(collection = "pay_cre_ser")
-public class Pay_cre_ser {
+public class pay_cre_ser {
     @Id
     private String id;
     private String nro_documento;

@@ -11,7 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class BankAccount {
 
     @Id
-    private String num_cue_bancaria;
+    private String nroDocumento;
+    private String numCuentaBancaria;
     private String tip_cue_bancaria;
     private int saldo;
     private int comision_mantenimiento;
